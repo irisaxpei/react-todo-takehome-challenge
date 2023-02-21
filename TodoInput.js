@@ -1,7 +1,14 @@
-import Select from 'react-select';
-const TodoInput = ({ todo, setTodo, addTodo, sortTodos, sortSelectOptions}) => { 
+import Select from "react-select";
+const TodoInput = ({
+  todo,
+  setTodo,
+  addTodo,
+  sortTodos,
+  sortSelectOptions,
+}) => {
   return (
     <div className="input-wrapper">
+      {/* Add Todo Field*/}
       <input
         type="text"
         autocomplete="off"
@@ -10,12 +17,13 @@ const TodoInput = ({ todo, setTodo, addTodo, sortTodos, sortSelectOptions}) => {
         value={todo.text}
         placeholder="add a todo!"
         onChange={(e) => {
-          const newTodo = { // making new Todo value here to be set onChange 
+          const newTodo = {
             text: e.target.value,
           };
           setTodo(newTodo);
         }}
       />
+      {/* Add Date Field*/}
       <input
         type="date"
         name="itemDueDate"
@@ -24,23 +32,26 @@ const TodoInput = ({ todo, setTodo, addTodo, sortTodos, sortSelectOptions}) => {
         onChange={(e) => {
           const newTodo = {
             text: todo.text,
-            dueDate: e.target.value
+            dueDate: e.target.value,
           };
           setTodo(newTodo);
         }}
       />
+      {/* Add Todo button*/}
       <button className="add-button" id="add-button" onClick={addTodo}>
-        Add 
+        Add
       </button>
-      <Select 
+      {/* Sort by dropdown*/}
+      <Select
         className="react-select"
         classNamePrefix="react-select"
         placeholder="sort by..."
-        options = {sortSelectOptions}
+        options={sortSelectOptions}
         onChange={(e) => {
           sortTodos(e.value);
-        }}>
-          sort
+        }}
+      >
+        sort
       </Select>
     </div>
   );
