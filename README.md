@@ -36,3 +36,5 @@ There are a good amount of features we could develop in the future; for instance
 ## Demo 
 
 https://drive.google.com/file/d/1_Gj45DZw67HyifRUIcRc4_stodB8Lx27/view?usp=sharing 
+
+You may need to download the video via the Google Drive UI to view the demo video! 
