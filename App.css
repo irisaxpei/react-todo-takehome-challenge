@@ -144,18 +144,18 @@ input[type="date"]
   background: #44c0b6;
 }
 
-.delete-button {
-  border: none;
-  color: #fe6a6a;
-  margin-left: auto;
-  margin-right: 0;
+.due-date{
+  position: relative;
+  margin-left: 50px;
+  margin-top: -1px
 }
 
 .edit-button{
   border: none;
-  color: white;
+  color: black;
   margin-left: auto;
-  right: 500px;
+  left: 640px;
+  position: absolute;
 }
 
 .edit-button:hover{
@@ -163,6 +163,13 @@ input[type="date"]
   background: green;
 }
 
+.delete-button {
+  border: none;
+  color: #fe6a6a;
+  margin-left: auto;
+  left: 750px;
+  position: absolute;
+}
 .delete-button:hover {
   color: #252525;
   background: #fe6a6a;
@@ -173,6 +180,7 @@ input[type="date"]
   color: white;
   margin-left: auto;
   right: 500px;
+  color: black;
 }
 
 .update-button:hover {
@@ -182,9 +190,9 @@ input[type="date"]
 
 .duplicate-button{
   border: none;
-  color: white;
+  color: black;
   margin-left: auto;
-  right: 500px;
+
 }
 
 .duplicate-button:hover {
@@ -213,16 +221,18 @@ input[type="date"]
 .todo {
   text-align: left;
   margin-bottom: 0.5rem;
-  background: rgb(199, 174, 174);
+  background: rgb(255, 255, 255);
   letter-spacing: 0.02rem;
   transition: all 0.3s ease-out;
-  border-left: 5px solid #cf972e;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin:15px;
 }
+
 .todo-entry {
   padding-left: 5px;
+  width: 20%;
 }
 
 .empty {
@@ -233,8 +243,8 @@ input[type="date"]
 }
 
 input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  size:100px;
+  background-color:green;
 }
 
 .todo-completed{
@@ -247,7 +257,8 @@ input[type="checkbox"] {
 
 .todo-tag{
   color:black;
-  width: 200px;
+  width: 170px;
+  margin-right: 35px;
   display: 'inline-block'
 }
 

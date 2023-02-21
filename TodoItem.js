@@ -41,7 +41,9 @@ const Item = ({entry, setTodos, remove, setBeingEdited, completed, setCompleted,
             />
             {/*edit button shenanigans*/}
             <div className={`todo-entry ${completed ? "todo-completed" : ""} ${isOverdue(entry) ? "todo-overdue": ""}`}>{entry.text}</div>
-            {entry.dueDate}
+            <class className="due-date">
+                {entry.dueDate}
+            </class>
                 <button
                     className="edit-button"
                     onClick={() => {

@@ -13,6 +13,7 @@ const TodoTagSelect=({todo, addTodoPriority}) => {
         <div className="todo-tag">
             <Select
                 components={animatedComponents}
+                placeholder="select priority"
                 options={options}
                 value={todo.priority}
                 name="tags"

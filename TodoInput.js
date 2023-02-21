@@ -4,6 +4,7 @@ const TodoInput = ({ todo, setTodo, addTodo, sortTodos, sortSelectOptions}) => {
     <div className="input-wrapper">
       <input
         type="text"
+        autocomplete="off"
         name="todo"
         id="todo-box"
         value={todo.text}
@@ -15,7 +16,6 @@ const TodoInput = ({ todo, setTodo, addTodo, sortTodos, sortSelectOptions}) => {
           setTodo(newTodo);
         }}
       />
-            
       <input
         type="date"
         name="itemDueDate"
