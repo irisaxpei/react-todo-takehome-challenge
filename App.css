@@ -35,7 +35,7 @@ body {
 }
 
 h1 {
-  animation: fadeInAnimation ease 7s;
+  animation: fadeInAnimation ease 4s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   color: black;
@@ -151,8 +151,12 @@ input[type="date"]
 }
 
 .edit-button{
-  border: none;
   color: black;
+  border-radius: 15px;
+  border: 1px solid rgb(0, 0, 0);
+  width: 100px;
+  height: 15px;
+  line-height: 0px;
   margin-left: auto;
   left: 640px;
   position: absolute;
@@ -164,9 +168,13 @@ input[type="date"]
 }
 
 .delete-button {
-  border: none;
-  color: #fe6a6a;
+  border-radius: 15px;
+  border: 1px solid rgb(0, 0, 0);
+  height: 15px;
+  width: 100px;
+  line-height: 0px;
   margin-left: auto;
+  color: black;
   left: 750px;
   position: absolute;
 }
@@ -192,7 +200,12 @@ input[type="date"]
   border: none;
   color: black;
   margin-left: auto;
-
+  border-radius: 15px;
+  border: 1px solid rgb(0, 0, 0);
+  height: 15px;
+  width: 110px;
+  margin-right: 18px;
+  line-height: 0px;
 }
 
 .duplicate-button:hover {
