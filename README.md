@@ -1,6 +1,9 @@
 # react-todo-takehome-challenge
 
 In the project directory, you can run: 
+<b> npm install </b>
+
+Then,
 
 <b> npm start </b>
 
