@@ -84,7 +84,7 @@ const App = () => {
       {/*sort todos by priority}*/}
       sortedTodos = [...todos].sort((a,b) => {
         const priorityWeight = { 'low': 0, 'medium': 1, 'high': 2 };
-        return priorityWeight[a.priorityValue]-priorityWeight[b.priorityValue];
+        return priorityWeight[b.priorityValue]-priorityWeight[a.priorityValue];
       });
     }
     else {
@@ -105,7 +105,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>hello! what will you get done today?</h1>
+      <h1>hello! what will you get done today? &#128262;</h1>
       <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} />
       <TodoList list={todos} remove={deleteTodo} editTodo={editTodo} setTodos={setTodos} addTodoPriority={addTodoPriority} duplicate={duplicate} />
       <button 

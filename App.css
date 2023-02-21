@@ -9,8 +9,9 @@ body {
   color: #f7f7f7;
   min-height: 100vh;
   background: white;
+  color: black;
   text-rendering: optimizeSpeed;
-  font-family: "Roboto", sans-serif;
+  font-family: American Typewriter, sans-serif;
 }
 
 .App {
@@ -18,7 +19,9 @@ body {
   max-width: 50%;
   margin: 0 auto;
   text-align: center;
-  background: palegoldenrod;
+  background: white;
+  border-radius: 25px;
+  border: 5px solid rgb(0, 0, 0);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px;
 }
 
@@ -52,13 +55,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border: 1px solid gray;
+  border: 1px solid rgb(4, 4, 4);
+  border-radius: 25px;
+  border: 2px solid rgb(0, 0, 0);
 }
 
-input {
-  width: 450px;
-  padding: 0.8em;
-}
 
 input:focus {
   outline: none;
@@ -75,7 +76,8 @@ button {
 input,
 button {
   font-size: 1em;
-  color: currentcolor;
+  color: black;
+  font-family: American Typewriter;
   background: transparent;
   border: 1px solid #828691;
 }
@@ -86,16 +88,55 @@ input::placeholder {
   color: black;
 }
 
+.todo-tag{
+  font-family: American Typewriter, sans-serif;
+  opacity: 1.0;
+  color: black;
+}
+
 input[type="text"]
 {
   font-family: American Typewriter, sans-serif;
   color: black;
 }
 
-.add-button {
-  margin-top: 0.2em;
-  color: orange;
+input[type="date"]
+{
+  font-family: American Typewriter, sans-serif;
+  color: black;
 }
+
+#todo-box{
+    border-radius: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 20px; 
+    width: 200px;
+    height: 15px;
+    margin-left: -100px;
+}
+
+#date-box{
+    border-radius: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 20px; 
+    width: 200px;
+    height: 15px;
+}
+
+.add-button {
+  color: black;
+  border-radius: 25px;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 20px; 
+  width: 100px;
+  height: 15px;
+  position: absolute;
+  margin-bottom: 50px;
+  line-height: 4px;
+  font-family: American Typewriter, sans-serif;
+
+}
+
 
 .add-button:hover {
   color: #252525;
@@ -126,6 +167,30 @@ input[type="text"]
   background: #fe6a6a;
 }
 
+.update-button{
+  border: none;
+  color: white;
+  margin-left: auto;
+  right: 500px;
+}
+
+.update-button:hover {
+  color: #252525;
+  background: green;
+}
+
+.duplicate-button{
+  border: none;
+  color: white;
+  margin-left: auto;
+  right: 500px;
+}
+
+.duplicate-button:hover {
+  color: #252525;
+  background: yellowgreen;
+}
+
 .todo-list {
   padding: 0;
   list-style: none;
@@ -134,7 +199,7 @@ input[type="text"]
 .todo {
   text-align: left;
   margin-bottom: 0.5rem;
-  background: #494847;
+  background: rgb(199, 174, 174);
   letter-spacing: 0.02rem;
   transition: all 0.3s ease-out;
   border-left: 5px solid #cf972e;
