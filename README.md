@@ -1,7 +1,7 @@
 # react-todo-takehome-challenge
 
-In the project directory, you can run 
+In the project directory, you can run: 
 
-npm start 
+<b> npm start </b>
 
 This will run the app in development mode. Open localhost:3000 to view in browser.
