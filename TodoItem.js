@@ -2,7 +2,7 @@ import { useState } from "react";
 import TodoTagSelect from './TodoTags';
 
 // Handling edits 
-const BeingEditedItem = ({entry, editTodo, setBeingEdited}) =>{
+const BeingEditedItem = ({entry, editTodo, editDate, setBeingEdited}) =>{
     return (
     <div className="todo-edit">
                 <input 
@@ -13,6 +13,14 @@ const BeingEditedItem = ({entry, editTodo, setBeingEdited}) =>{
                     onChange={(e) => {
                         editTodo(entry.id, e.target.value);
 
+                    }}
+                />
+                <input 
+                    type = "date"
+                    name="edit-date"
+                    value={entry.dueDate}
+                    onChange={(e) => {
+                        editDate(entry.id, e.target.value);
                     }}
                 />
                 <button 
@@ -87,13 +95,13 @@ const isOverdue = (entry) => {
 
 
 
-const ToDoItem = ({entry, setTodos, editTodo, remove, addTodoPriority, duplicate}) => {
+const ToDoItem = ({entry, setTodos, editTodo, editDate, remove, addTodoPriority, duplicate}) => {
     const [beingEdited, setBeingEdited] = useState(false);
     const [completed, setCompleted] = useState(false);
     return (
     <>
         {beingEdited ? (
-            <BeingEditedItem entry={entry} editTodo={editTodo} setBeingEdited={setBeingEdited}/>
+            <BeingEditedItem entry={entry} editTodo={editTodo} editDate={editDate} setBeingEdited={setBeingEdited}/>
         ) : (
         <>
             <Item entry={entry} setTodos={setTodos} remove={remove} setBeingEdited={setBeingEdited} completed={completed} setCompleted={setCompleted} addTodoPriority={addTodoPriority} duplicate={duplicate}/>

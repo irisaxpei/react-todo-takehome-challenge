@@ -57,7 +57,17 @@ const App = () => {
     });
     setTodos(updatedTodos)
     
-  }
+  };
+
+  const editDate = (id, newDate) => {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id){ 
+        return {...todo, dueDate: newDate}
+      }
+      return todo; 
+    });
+    setTodos(updatedTodos)
+};
 
   const addTodoPriority = (id, newPriority, newPriorityValue) => {
     console.log(newPriority);
@@ -107,7 +117,7 @@ const App = () => {
       <h1>hello! what will you get done today? &#128262;</h1>
       <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} sortTodos={sortTodos} sortSelectOptions={sortSelectOptions} />
       {/* sort todos*/}
-      <TodoList list={todos} remove={deleteTodo} editTodo={editTodo} setTodos={setTodos} addTodoPriority={addTodoPriority} duplicate={duplicate} />
+      <TodoList list={todos} remove={deleteTodo} editTodo={editTodo} editDate={editDate} setTodos={setTodos} addTodoPriority={addTodoPriority} duplicate={duplicate} />
       <button 
           className="clear-button"
           onClick={() => {
