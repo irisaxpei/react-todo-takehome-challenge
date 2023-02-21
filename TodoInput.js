@@ -1,4 +1,5 @@
-const TodoInput = ({ todo, setTodo, addTodo }) => { 
+import Select from 'react-select';
+const TodoInput = ({ todo, setTodo, addTodo, sortTodos, sortSelectOptions}) => { 
   return (
     <div className="input-wrapper">
       <input
@@ -31,6 +32,16 @@ const TodoInput = ({ todo, setTodo, addTodo }) => {
       <button className="add-button" id="add-button" onClick={addTodo}>
         Add 
       </button>
+      <Select 
+        className="react-select"
+        classNamePrefix="react-select"
+        placeholder="sort by..."
+        options = {sortSelectOptions}
+        onChange={(e) => {
+          sortTodos(e.value);
+        }}>
+          sort
+      </Select>
     </div>
   );
 };

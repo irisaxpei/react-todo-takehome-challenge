@@ -73,7 +73,6 @@ const App = () => {
   const clearTodos = () => {
     setTodos([]);
   }
-
   const sortSelectOptions = [
     { value: 'priority', label: 'Priority' },
     { value: 'date', label: 'Date' }
@@ -106,7 +105,8 @@ const App = () => {
   return (
     <div className="App">
       <h1>hello! what will you get done today? &#128262;</h1>
-      <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} />
+      <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} sortTodos={sortTodos} sortSelectOptions={sortSelectOptions} />
+      {/* sort todos*/}
       <TodoList list={todos} remove={deleteTodo} editTodo={editTodo} setTodos={setTodos} addTodoPriority={addTodoPriority} duplicate={duplicate} />
       <button 
           className="clear-button"
@@ -115,15 +115,6 @@ const App = () => {
           }}>
             Clear Todos
           </button>
-      {/* sort todos*/}
-      <Select 
-        className="sort-select"
-        options = {sortSelectOptions}
-        onChange={(e) => {
-          sortTodos(e.value);
-        }}>
-          sort
-      </Select>
     </div>
   );
 };

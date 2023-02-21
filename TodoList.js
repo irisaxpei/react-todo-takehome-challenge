@@ -11,7 +11,7 @@ const TodoList = ({ list, remove, editTodo, setTodo, addTodoPriority, duplicate 
         </div>
       ) : (
         <div className="empty">
-          <p>No task found</p>
+          <p>no tasks found, hooray!</p>
         </div>
       )}
     </>

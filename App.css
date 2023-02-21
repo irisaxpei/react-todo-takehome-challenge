@@ -15,8 +15,7 @@ body {
 }
 
 .App {
-  padding: 1rem;
-  max-width: 50%;
+  max-width: 75%;
   margin: 0 auto;
   text-align: center;
   background: white;
@@ -112,7 +111,8 @@ input[type="date"]
     padding: 20px; 
     width: 200px;
     height: 15px;
-    margin-left: -100px;
+    margin-left: -300px;
+    margin-right: 20px;
 }
 
 #date-box{
@@ -121,6 +121,7 @@ input[type="date"]
     padding: 20px; 
     width: 200px;
     height: 15px;
+    margin-right: 20px;
 }
 
 .add-button {
@@ -191,6 +192,19 @@ input[type="date"]
   background: yellowgreen;
 }
 
+.clear-button{
+  color: black;
+  border-radius: 25px;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 20px; 
+  width: 200px;
+  height: 15px;
+  margin-bottom: 50px;
+  line-height: 4px;
+  font-family: American Typewriter, sans-serif;
+
+}
+
 .todo-list {
   padding: 0;
   list-style: none;
@@ -237,6 +251,14 @@ input[type="checkbox"] {
   display: 'inline-block'
 }
 
-.sort-select{
+.react-select {
   color:black;
+  border-radius: 25px;
+  padding: 20px; 
+  width: 200px;
+  height: 15px;
+  line-height:-5px;
+  margin-top: -62px;
+  margin-left:610px;
 }
+
