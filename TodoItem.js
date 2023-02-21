@@ -8,6 +8,7 @@ const BeingEditedItem = ({entry, editTodo, editDate, setBeingEdited}) =>{
                 <input 
                     type="text"
                     name="edit"
+                    id="todo-box"
                     value={entry.text}
                     placeholder="Edit your to-do item"
                     onChange={(e) => {
@@ -17,6 +18,7 @@ const BeingEditedItem = ({entry, editTodo, editDate, setBeingEdited}) =>{
                 />
                 <input 
                     type = "date"
+                    id="date-box"
                     name="edit-date"
                     value={entry.dueDate}
                     onChange={(e) => {
