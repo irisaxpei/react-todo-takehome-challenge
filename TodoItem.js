@@ -27,7 +27,7 @@ const BeingEditedItem = ({entry, editTodo, setBeingEdited}) =>{
 
 };
 
-const Item = ({entry, setTodos, remove, setBeingEdited, completed, setCompleted, addTodoPriority}) => {
+const Item = ({entry, setTodos, remove, setBeingEdited, completed, setCompleted, addTodoPriority, duplicate}) => {
     return(
     <>
         {/*for marking item as complete*/}
@@ -59,6 +59,14 @@ const Item = ({entry, setTodos, remove, setBeingEdited, completed, setCompleted,
                 >
                     Delete
                 </button>
+                <button 
+                    className="duplicate-button"
+                    onClick={() =>{
+                        duplicate(entry);
+                    }}
+                >
+                    Duplicate
+                    </button>   
         {/* priority dropdown */}
                 <TodoTagSelect todo={entry} addTodoPriority={addTodoPriority}/>
         </div>
@@ -77,7 +85,7 @@ const isOverdue = (entry) => {
 
 
 
-const ToDoItem = ({entry, setTodos, editTodo, remove, addTodoPriority}) => {
+const ToDoItem = ({entry, setTodos, editTodo, remove, addTodoPriority, duplicate}) => {
     const [beingEdited, setBeingEdited] = useState(false);
     const [completed, setCompleted] = useState(false);
     return (
@@ -86,7 +94,7 @@ const ToDoItem = ({entry, setTodos, editTodo, remove, addTodoPriority}) => {
             <BeingEditedItem entry={entry} editTodo={editTodo} setBeingEdited={setBeingEdited}/>
         ) : (
         <>
-            <Item entry={entry} setTodos={setTodos} remove={remove} setBeingEdited={setBeingEdited} completed={completed} setCompleted={setCompleted} addTodoPriority={addTodoPriority}/>
+            <Item entry={entry} setTodos={setTodos} remove={remove} setBeingEdited={setBeingEdited} completed={completed} setCompleted={setCompleted} addTodoPriority={addTodoPriority} duplicate={duplicate}/>
         </>
         )}
 

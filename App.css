@@ -8,7 +8,7 @@ body {
   padding: 50px;
   color: #f7f7f7;
   min-height: 100vh;
-  background: #252525;
+  background: white;
   text-rendering: optimizeSpeed;
   font-family: "Roboto", sans-serif;
 }
@@ -18,16 +18,26 @@ body {
   max-width: 50%;
   margin: 0 auto;
   text-align: center;
-  background: #333;
+  background: palegoldenrod;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px;
 }
 
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 h1 {
-  font-weight: 300;
-  color: orange;
-  font-size: 2.5rem;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
+  animation: fadeInAnimation ease 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  color: black;
+  font-family: American Typewriter, sans-serif;
 }
 
 .input-wrapper {
@@ -68,6 +78,18 @@ button {
   color: currentcolor;
   background: transparent;
   border: 1px solid #828691;
+}
+
+input::placeholder {
+  font-family: American Typewriter, sans-serif;
+  opacity: 0.5;
+  color: black;
+}
+
+input[type="text"]
+{
+  font-family: American Typewriter, sans-serif;
+  color: black;
 }
 
 .add-button {
@@ -148,4 +170,8 @@ input[type="checkbox"] {
   color:black;
   width: 200px;
   display: 'inline-block'
+}
+
+.sort-select{
+  color:black;
 }

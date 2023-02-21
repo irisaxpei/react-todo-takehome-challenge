@@ -3,6 +3,7 @@ import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
 import TodoItem from "./TodoItem";
 import ToDoTagSelect from './TodoTags';
+import Select from 'react-select';
 import "./App.css";
 
 const App = () => {
@@ -43,7 +44,7 @@ const App = () => {
   };
 
   const deleteTodo = (entry) => { // change to passing in entire obj 
-    const newTodos = todos.filter((todo) => todo.text!==entry.text); // parsing through each obj.text, comparing to obj.text
+    const newTodos = todos.filter((todo) => todo.id!==entry.id); // parsing through each obj.text, comparing to obj.text
     setTodos(newTodos); 
   };
 
@@ -73,20 +74,40 @@ const App = () => {
     setTodos([]);
   }
 
-  const sortTodosPriority = () => {
-    {/*sort todos by priority}*/}
-    const sortedTodos = [...todos].sort((a,b) => {
-      const priorityWeight = { 'low': 0, 'medium': 1, 'high': 2 };
-      return priorityWeight[a.priorityValue]-priorityWeight[b.priorityValue];
-    });
+  const sortSelectOptions = [
+    { value: 'priority', label: 'Priority' },
+    { value: 'date', label: 'Date' }
+  ]
+  const sortTodos = (e) => {
+    let sortedTodos;
+    if (e ===  "priority") {
+      {/*sort todos by priority}*/}
+      sortedTodos = [...todos].sort((a,b) => {
+        const priorityWeight = { 'low': 0, 'medium': 1, 'high': 2 };
+        return priorityWeight[a.priorityValue]-priorityWeight[b.priorityValue];
+      });
+    }
+    else {
+      console.log(e);
+      console.assert( e==="date", "is not date");
+      sortedTodos = [...todos].sort((a,b) => {
+        return new Date(a.dueDate) - new Date(b.dueDate);
+      });
+    }
     setTodos(sortedTodos);
+  }
+
+  const duplicate = (entry) => {
+    console.log(todos);
+    setTodos([...todos, {...entry, id: todos.length + 1}]);
+    
   }
 
   return (
     <div className="App">
-      <h1>React Todo App</h1>
+      <h1>hello! what will you get done today?</h1>
       <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} />
-      <TodoList list={todos} remove={deleteTodo} editTodo={editTodo} setTodos={setTodos} addTodoPriority={addTodoPriority} />
+      <TodoList list={todos} remove={deleteTodo} editTodo={editTodo} setTodos={setTodos} addTodoPriority={addTodoPriority} duplicate={duplicate} />
       <button 
           className="clear-button"
           onClick={() => {
@@ -95,13 +116,14 @@ const App = () => {
             Clear Todos
           </button>
       {/* sort todos*/}
-      <button 
-        className="sort button"
-        onClick={() => {
-          sortTodosPriority();
+      <Select 
+        className="sort-select"
+        options = {sortSelectOptions}
+        onChange={(e) => {
+          sortTodos(e.value);
         }}>
           sort
-        </button>
+      </Select>
     </div>
   );
 };
